@@ -3,8 +3,10 @@
 Instructions for an AI agent operating the **Fabric Metadata-Driven Framework (FMD)**
 deployed in this Fabric tenant, via the Fabric CLI (`fab`), direct SQL, and the Fabric REST API.
 
-Upstream: https://github.com/edkreuk/FMD_FRAMEWORK (MIT). This is a local clone; the actual
-deployment was done manually (see §1), not via the repo's own setup notebook.
+Originally forked from https://github.com/edkreuk/FMD_FRAMEWORK (MIT) as a starting point.
+We are **not** tracking upstream or contributing back — this is now our own codebase built
+on top of that base (see rule 8 in §2 on git remotes). The actual deployment here was done
+manually (see §1), not via the repo's own setup notebook.
 
 **Read [../CLAUDE.md](../CLAUDE.md) first** — it has the Windows/PowerShell environment
 notes and the Azure PAYG cost guardrail that apply to everything below.
@@ -77,6 +79,13 @@ via `fab get`/SQL rather than trusting this table blindly if anything doesn't li
 7. **Log what you ran.** Every `fab`/SQL write command you execute should be visible in
    your own tool-call transcript (it already is, by construction) — don't summarize a
    write away in prose without showing the actual command.
+8. **Never push to `origin` or `myfork`.** `origin` is the third-party upstream
+   (`edkreuk/FMD_FRAMEWORK`) — we do not push there, ever. `myfork`
+   (`dornerd/FMD_FRAMEWORK`) was the original fork remote, but we're no longer tracking
+   upstream or contributing back to it — we're building our own thing on top of this
+   codebase. Local commits on `main` are fine; if/when this needs its own remote home,
+   that's a deliberate decision to make with the user (new repo, likely in Azure DevOps
+   alongside `Fabric_Agent`), not a default `git push`.
 
 ---
 
