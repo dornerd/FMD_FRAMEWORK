@@ -96,7 +96,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -206,7 +206,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -252,7 +252,7 @@
                   "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
                 },
                 "externalReferences": {
-                  "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+                  "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
                 },
                 "annotations": []
               }
@@ -309,12 +309,12 @@
                             }
                           },
                           "waitOnCompletion": true,
-                          "workspaceId": "00000000-0000-0000-0000-000000000000",
-                          "pipelineId": "a7f32c61-f86b-4484-b2e2-366d839bcb42",
+                          "workspaceId": "a429833b-6390-466d-ac86-f4e3e181eb21",
+                          "pipelineId": "d722d808-1e5d-4a51-8c4c-9ca9e90566d6",
                           "operationType": "InvokeFabricPipeline"
                         },
                         "externalReferences": {
-                          "connection": "6d8146c6-a438-47df-94e2-540c552eb6d7"
+                          "connection": "ff901cf8-71b2-4236-af7f-dfab15160a2b"
                         },
                         "policy": {
                           "timeout": "0.01:00:00",
@@ -342,12 +342,12 @@
                             }
                           },
                           "waitOnCompletion": true,
-                          "workspaceId": "00000000-0000-0000-0000-000000000000",
-                          "pipelineId": "d20eb24b-abeb-92d0-4c84-932ed3597147",
+                          "workspaceId": "a429833b-6390-466d-ac86-f4e3e181eb21",
+                          "pipelineId": "11135b26-a9a4-4c92-a90a-7622b0a3648c",
                           "operationType": "InvokeFabricPipeline"
                         },
                         "externalReferences": {
-                          "connection": "6d8146c6-a438-47df-94e2-540c552eb6d7"
+                          "connection": "ff901cf8-71b2-4236-af7f-dfab15160a2b"
                         },
                         "policy": {
                           "timeout": "0.01:00:00",
@@ -474,7 +474,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }

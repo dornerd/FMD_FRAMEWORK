@@ -96,7 +96,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -206,7 +206,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -248,12 +248,12 @@
                   }
                 },
                 "waitOnCompletion": true,
-                "workspaceId": "00000000-0000-0000-0000-000000000000",
-                "pipelineId": "456ec477-b392-4576-8070-ad5cf1fd5a30",
+                "workspaceId": "a429833b-6390-466d-ac86-f4e3e181eb21",
+                "pipelineId": "863ba226-8dbe-46ff-b71e-8171487bd4c5",
                 "operationType": "InvokeFabricPipeline"
               },
               "externalReferences": {
-                "connection": "6d8146c6-a438-47df-94e2-540c552eb6d7"
+                "connection": "ff901cf8-71b2-4236-af7f-dfab15160a2b"
               },
               "policy": {
                 "timeout": "0.01:00:00",
@@ -301,7 +301,7 @@
                   "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
                 },
                 "externalReferences": {
-                  "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+                  "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
                 },
                 "annotations": []
               }
@@ -422,7 +422,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }

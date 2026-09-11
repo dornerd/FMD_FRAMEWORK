@@ -4,8 +4,8 @@
       {
         "type": "TridentNotebook",
         "typeProperties": {
-          "notebookId": "b7ad5eb9-f6e2-9b38-4fb4-60c886e65b72",
-          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notebookId": "c592cca0-b0fc-4b23-9799-839bd6327da9",
+          "workspaceId": "a429833b-6390-466d-ac86-f4e3e181eb21",
           "parameters": {
             "SourceWorkspaceId": {
               "value": {
@@ -30,7 +30,7 @@
     "parameters": {
       "Data_WorkspaceGuid": {
         "type": "string",
-        "defaultValue": "40e27fdc-775a-4ee2-84d5-48893c92d7cc"
+        "defaultValue": "48daabd7-7e4a-4cf2-a5bb-b431fef8d533"
       }
     },
     "libraryVariables": {

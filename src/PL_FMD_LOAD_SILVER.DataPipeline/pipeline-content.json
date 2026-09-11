@@ -35,7 +35,7 @@
                   "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
                 },
                 "externalReferences": {
-                  "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+                  "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
                 },
                 "annotations": []
               }
@@ -157,7 +157,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -267,7 +267,7 @@
               "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
             },
             "externalReferences": {
-              "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+              "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
             },
             "annotations": []
           }
@@ -301,8 +301,8 @@
             {
               "type": "TridentNotebook",
               "typeProperties": {
-                "notebookId": "bf2101e2-a101-b8df-43bf-5f6ba130a279",
-                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "notebookId": "b818d87b-6eb0-4c63-8b09-0d6d9431b212",
+                "workspaceId": "a429833b-6390-466d-ac86-f4e3e181eb21",
                 "parameters": {
                   "Path": {
                     "value": {
@@ -350,7 +350,7 @@
                 "sessionTag": "fmd_framework"
               },
               "externalReferences": {
-                "connection": "5929775e-aff1-430c-b56e-f855d0bc63b8"
+                "connection": "1301d8cb-3896-4e10-b5c1-5b906653bab1"
               },
               "policy": {
                 "timeout": "0.01:00:00",
@@ -460,7 +460,7 @@
                     "workspaceId": "@pipeline().libraryVariables.VAR_CONFIG_FMD_fmd_config_workspace_guid"
                   },
                   "externalReferences": {
-                    "connection": "372237f9-709a-48f8-8fb2-ce06940c990e"
+                    "connection": "821c151d-fac3-4b96-af51-5ff7235215ff"
                   },
                   "annotations": []
                 }

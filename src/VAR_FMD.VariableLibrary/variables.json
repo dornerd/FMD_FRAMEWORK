@@ -5,13 +5,13 @@
       "name": "key_vault_uri_name",
       "note": "",
       "type": "String",
-      "value": ""
+      "value": "https://kv-fmd-framework.vault.azure.net/"
     },
     {
       "name": "lakehouse_schema_enabled",
       "note": "",
       "type": "Boolean",
-      "value": ""
+      "value": true
     }    ,
     {
       "name": "purview_account_name",
