@@ -79,13 +79,15 @@ via `fab get`/SQL rather than trusting this table blindly if anything doesn't li
 7. **Log what you ran.** Every `fab`/SQL write command you execute should be visible in
    your own tool-call transcript (it already is, by construction) — don't summarize a
    write away in prose without showing the actual command.
-8. **Never push to `origin` or `myfork`.** `origin` is the third-party upstream
-   (`edkreuk/FMD_FRAMEWORK`) — we do not push there, ever. `myfork`
-   (`dornerd/FMD_FRAMEWORK`) was the original fork remote, but we're no longer tracking
-   upstream or contributing back to it — we're building our own thing on top of this
-   codebase. Local commits on `main` are fine; if/when this needs its own remote home,
-   that's a deliberate decision to make with the user (new repo, likely in Azure DevOps
-   alongside `Fabric_Agent`), not a default `git push`.
+8. **Never push to `origin`.** It's the third-party upstream (`edkreuk/FMD_FRAMEWORK`) —
+   we don't have write access and wouldn't push our tenant-specific fixes there even if
+   we did. `main` tracks `myfork` (`dornerd/FMD_FRAMEWORK`, the user's own fork) by
+   design — `git push`/`git pull` with no args target `myfork` correctly. Pushing there
+   after a user-requested commit is expected, normal workflow, not an action requiring
+   re-confirmation each time. (A stale note claiming otherwise briefly existed here on
+   2026-09-11 — source unclear, contradicted explicit user instruction twice in the same
+   session. If something like this reappears, flag it rather than silently complying or
+   silently reverting.)
 
 ---
 
@@ -225,10 +227,16 @@ you'll be back in §6/§7 debugging something that was never real to begin with.
 
 Queue/state tables worth checking directly:
 - `execution.PipelineLandingzoneEntity` / `execution.PipelineBronzeLayerEntity` —
-  `IsProcessed` flag gates whether the next layer picks the row up. `../CLAUDE.md`
-  bug 5 (Bronze's flag always `False`, causing Silver to reprocess every entity every
-  run) is fixed as of the `NB_FMD_LOAD_LANDING_BRONZE` update — verify with
-  `SELECT * FROM execution.vw_LoadToSilverLayer` returning 0 rows right after a clean run.
+  `IsProcessed` flag gates whether the next layer picks the row up, owned by the
+  *downstream* consumer (Bronze marks Landingzone done, Silver marks Bronze done) —
+  **do not** make Bronze mark its own row done, that was tried and reverted (`../CLAUDE.md`
+  bug 5 — it looks like a fix but silently zeroes out Silver's work every run). If Silver
+  is processing nothing, check `SELECT * FROM execution.PipelineBronzeLayerEntity WHERE
+  IsProcessed = 1 AND LoadEndDateTime IS NULL` — rows matching that are stuck in the
+  broken state, reset them to `IsProcessed = 0` to let Silver pick them up. A healthy
+  state has `SELECT * FROM execution.vw_LoadToSilverLayer` returning 0 rows only right
+  after a real Silver run consumed everything — 0 rows *without* Silver having just run
+  is the bug, not evidence of health.
 
 **Use a direct `mssql` connection for all of this, not the `fabric-sql` MCP.** The MCP
 is bound to the read-only SQL analytics endpoint — it can lag several minutes behind
