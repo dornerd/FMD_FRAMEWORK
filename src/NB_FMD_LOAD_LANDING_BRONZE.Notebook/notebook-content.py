@@ -538,7 +538,7 @@ else:
         }
 
     execute_with_outputs(SP_UPSERT_LDZ_ENTITY, driver, connstring, database, Filename=SourceFileName, FilePath=SourceFilePath, IsProcessed="True", LandingzoneEntityId=LandingzoneEntityId)
-    execute_with_outputs(SP_UPSERT_BRONZE_ENTITY, driver, connstring, database, SchemaName=TargetSchema, TableName=TargetName, IsProcessed="False", BronzeLayerEntityId=BronzeLayerEntityId)
+    execute_with_outputs(SP_UPSERT_BRONZE_ENTITY, driver, connstring, database, SchemaName=TargetSchema, TableName=TargetName, IsProcessed="True", BronzeLayerEntityId=BronzeLayerEntityId)
     execute_with_outputs(SP_AUDIT_NOTEBOOK, driver, connstring, database, **audit_params, LogData=json.dumps(result_data), LogType="EndNotebookActivity")
     notebookutils.notebook.exit(result_data)
 
@@ -630,7 +630,7 @@ result_data = {
 # CELL ********************
 
 execute_with_outputs(SP_UPSERT_LDZ_ENTITY, driver, connstring, database, Filename=SourceFileName, FilePath=SourceFilePath, IsProcessed="True", LandingzoneEntityId=LandingzoneEntityId)
-execute_with_outputs(SP_UPSERT_BRONZE_ENTITY, driver, connstring, database, SchemaName=TargetSchema, TableName=TargetName, IsProcessed="False", BronzeLayerEntityId=BronzeLayerEntityId)
+execute_with_outputs(SP_UPSERT_BRONZE_ENTITY, driver, connstring, database, SchemaName=TargetSchema, TableName=TargetName, IsProcessed="True", BronzeLayerEntityId=BronzeLayerEntityId)
 execute_with_outputs(SP_AUDIT_NOTEBOOK, driver, connstring, database, **audit_params, LogData=json.dumps(result_data), LogType="EndNotebookActivity")
 
 # METADATA ********************

@@ -216,8 +216,10 @@ you'll be back in §6/§7 debugging something that was never real to begin with.
 
 Queue/state tables worth checking directly:
 - `execution.PipelineLandingzoneEntity` / `execution.PipelineBronzeLayerEntity` —
-  `IsProcessed` flag gates whether the next layer picks the row up. See `../CLAUDE.md`
-  bug 5 — Bronze's flag is currently always `False` by a notebook bug, not yet fixed.
+  `IsProcessed` flag gates whether the next layer picks the row up. `../CLAUDE.md`
+  bug 5 (Bronze's flag always `False`, causing Silver to reprocess every entity every
+  run) is fixed as of the `NB_FMD_LOAD_LANDING_BRONZE` update — verify with
+  `SELECT * FROM execution.vw_LoadToSilverLayer` returning 0 rows right after a clean run.
 
 **Use a direct `mssql` connection for all of this, not the `fabric-sql` MCP.** The MCP
 is bound to the read-only SQL analytics endpoint — it can lag several minutes behind
